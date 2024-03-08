@@ -22,7 +22,7 @@ function HelloWorld() {
       </a> */}
       <a
         className="App-link"
-        href="/pdfviewer"
+        href="/pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
