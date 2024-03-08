@@ -1,13 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/HelloWorld';
+import Pdf from './components/pdf/Pdf';
+import Base64PdfViewer from './components/pdf/Base64PdfViewer';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello, world! <br/>
         </p>
         <a
           className="App-link"
@@ -16,7 +19,14 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
+        <Routes>
+          <Route exact path="/" element={Home()} />
+          <Route exact path="/helloworld" element={Home()} />
+          <Route path="/pdf" Component={Pdf} />
+          <Route path="/pdfviewer" element={Base64PdfViewer()} />
+          <Route element={Home()} /> {/* This will render if no other route matches */}
+        </Routes>
       </header>
     </div>
   );
